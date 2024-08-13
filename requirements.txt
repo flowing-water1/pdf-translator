@@ -83,7 +83,6 @@ PyMuPDFb==1.24.3
 pyparsing==3.1.2
 pypdf==4.2.0
 pypdfium2==4.30.0
-python-dateutil
 python-dateutil==2.9.0.post0
 pytz==2024.1
 pyxnat==1.6.2
@@ -120,4 +119,3 @@ win32-setctime==1.1.0
 yarl==1.9.4
 zhipu==1.0.1
 zhipuai==2.1.0.20240521
-
