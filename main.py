@@ -43,19 +43,19 @@ if upload_file:
     st.write(f"你上传的PDF文件是: {upload_file.name}")
     st.divider()
     st.info("文件预览：")
+
+    # 其他操作
+    before_pdf, after_pdf = st.columns([1, 1])
     
     # 使用临时文件保存上传的PDF文件
     with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as temp_file:
         temp_file.write(upload_file.read())
         temp_file_path = temp_file.name  # 获取临时文件的路径
-    
+        original_file_name = os.path.splitext(upload_file.name)[0]
+        
     # 预览PDF文件
     pdf_preview = pdf_viewer(input=temp_file_path, height=400, key='1')
 
-    # 其他操作
-    before_pdf, after_pdf = st.columns([1, 1])
-
-    original_file_name = os.path.splitext(upload_file.name)[0]
 
 # 如果用户没有输入任何API key，提示输入
 if not (openai_api_key or zhipu_api_key):
